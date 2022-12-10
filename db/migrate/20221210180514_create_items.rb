@@ -10,7 +10,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.text :introduction, null :false
       t.integer :price, null :false
       
-      #販売ステータスのカラム、これで合ってる？要質問
+      #ステータスのカラム、これで合ってる？要質問
       t.boolean :is_active, null :false, default :true
       
       t.timestamps

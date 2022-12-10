@@ -7,7 +7,9 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.integer :customer_id, null :false
 
       t.integer :price, null :false
+      #支払方法のカラム、これで合ってる？要質問
       t.integer :payment_method, null :false, default :0
+      #ステータスのカラム、これで合ってる？要質問
       t.integer :ordered_status, null :false, default :0
       t.string :postal_code, null :false
       t.string :address, null :false
