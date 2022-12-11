@@ -3,17 +3,13 @@ class CreateOrders < ActiveRecord::Migration[6.1]
     create_table :orders do |t|
 
       #追加カラム
-      #FKキーのカラムはここに記入必要？要質問
-      t.integer :customer_id, null :false
-
-      t.integer :price, null :false
-      #支払方法のカラム、これで合ってる？要質問
-      t.integer :payment_method, null :false, default :0
-      #ステータスのカラム、これで合ってる？要質問
-      t.integer :ordered_status, null :false, default :0
-      t.string :postal_code, null :false
-      t.string :address, null :false
-      t.string :name, null :false
+      t.integer :customer_id, null: false
+      t.integer :price, null: false
+      t.integer :payment_method, null: false, default: 0
+      t.integer :ordered_status, null: false, default: 0
+      t.string :postal_code, null: false
+      t.string :address, null: false
+      t.string :name, null: false
 
       t.timestamps
     end
