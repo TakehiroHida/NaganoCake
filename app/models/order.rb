@@ -1,5 +1,12 @@
 class Order < ApplicationRecord
     
+#アソシエーション
+    belongs_to :customer
+    
+    has_many :order_items, dependent: :destroy
+    
+    
+#enum   
     enum payment_method: {
         credit: 0,  #クレジットカード決済
         bank: 1  #銀行振込
