@@ -2,16 +2,23 @@
 
     <%= form_with model: @item do |f| %>
         <h3>商品画像</h3>
-        
+            <%= f.file_field :image, accept: "image/*" %>
+            
         <h3>商品名</h3>
-        
+            <%= f.text_field :name %>
+
         <h3>商品説明</h3>
-        
+            <%= f.text_area :introduction %>
+            
         <h3>ジャンル</h3>
         
+            <%= f.collection_select #:保存先のカラム名, テーブル（モデル）名.all, :実際にDBに保存させるカラム名, :選択肢に用いるカラム名, include_blank: "選択して下さい" %>
+            
         <h3>税込み価格</h3>
-        
+            <p><%= f.text_area :price %>円</p>
+            
         <h3>販売ステータス</h3>
-        
+            <%= #booleanを使用しているためこちらは調べた上でメンターに質問＆確認し実装する %>
+            
         <%= f.submit '新規登録' %>
     <% end %>
