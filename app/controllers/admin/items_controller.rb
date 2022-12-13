@@ -3,13 +3,14 @@ class Admin::ItemsController < ApplicationController
     def create
         @item = Item.new(item_params)
         @item.save
-        redirect_to admin_items_path
+        redirect_to admin_items_path #注文履歴一覧に後ほどパスの変更が必要
     end
     
     def edit
     end
 
     def index
+        @items = Item.all
     end
     
     def new
@@ -17,6 +18,7 @@ class Admin::ItemsController < ApplicationController
     end
     
     def show
+        @item = Item.find(item_params)
     end
 
     def update

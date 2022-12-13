@@ -1,0 +1,29 @@
+<h1>商品詳細</h1>
+
+<div>
+    <%= image_tag image.item.get_image(100,100) #商品画像 %>
+</div>
+
+<div>
+    <h3>商品名</h3>
+        <%= item.name %>
+</div>
+
+<div>
+    <h3>商品説明</h3>
+        <%= item_introduction %>
+</div>
+
+<div>
+    <h3>ジャンル</h3>
+        <%= Genre.find(item.genre_id).name %>
+</div>
+
+<div>
+    <h3>販売ステータス</h3>
+        <%= item.is_active ? '販売中' : '販売停止中' %>
+</div>
+
+<div>
+    <%= link_to "編集する" #編集画面へのパス %>
+</div>

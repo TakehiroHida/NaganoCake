@@ -10,4 +10,8 @@ class Item < ApplicationRecord
 #ActiveStorage    
     has_one_attached :image
     
+    def get_image
+        image.variant(reseize_to_limit: [width,height]).processed
+    end
+    
 end
