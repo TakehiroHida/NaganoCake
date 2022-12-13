@@ -6,6 +6,7 @@ class Item < ApplicationRecord
     
     belongs_to :genre
     
+    
 #ActiveStorage    
     has_one_attached :image
     

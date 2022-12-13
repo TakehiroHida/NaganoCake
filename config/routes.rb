@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
   
+  root to 'admin/'
+  
   namespace :admin do
     resources :items, except: [:destroy]
   end
