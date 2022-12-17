@@ -7,6 +7,7 @@ class Admin::ItemsController < ApplicationController
     end
     
     def edit
+        @item = Item.find(item_params)
     end
 
     def index
@@ -22,6 +23,9 @@ class Admin::ItemsController < ApplicationController
     end
 
     def update
+        @item = Item.find(item_params)
+        @item.update
+        redirect_to admin_items_path #商品詳細ページにパスの変更が必要
     end
     
     #投稿データのストロングパラメータ
