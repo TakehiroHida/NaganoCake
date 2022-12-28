@@ -10,13 +10,19 @@
         <% @items.each do |item| %>
             <td><%= item.id %></td>
             <td>
-                <% link_to #商品詳細へのパスを記入→詳細ページ未完成 %>
+                <% link_to admin_item_path do %>
                     <%= item.name %>
-                <% enda %>
+                <% end %>
             </td>
             <td><%= item.price %></td>
-            <td><%= Genre.find(item.genre_id).name #合っているか要質問 %></td>
-            <td><%= item.is_active ? '販売中' : '販売停止中' #合っているか要質問 %></td>
+            <td><%= item.genre.name %></td>
+            <td><% if item.is_active? %>
+                    <span>販売中</span>
+                <% else %>
+                    <span>販売停止中</span>
+                <% end %>
+            </td>
+        <% end %>
     </tbody>
 </table>
 

@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
   
-  root to 'admin/'
   
   namespace :admin do
+    root 'orders#index' #後々注文履歴一覧のページに変更する
     resources :items, except: [:destroy]
+    resources :customers, only: [:index, :show, :edit]
+    resources :orders, only: [:index, :show]
   end
   
   

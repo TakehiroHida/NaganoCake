@@ -3,7 +3,7 @@ class Admin::ItemsController < ApplicationController
     def create
         @item = Item.new(item_params)
         @item.save
-        redirect_to admin_items_path #注文履歴一覧に後ほどパスの変更が必要
+        redirect_to admin_item_path
     end
     
     def edit

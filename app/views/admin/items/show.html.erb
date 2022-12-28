@@ -1,7 +1,7 @@
 <h1>商品詳細</h1>
 
 <div>
-    <%= image_tag image.item.get_image(100,100) #商品画像 %>
+    <%= image_tag image.item.get_image(100,100) %>
 </div>
 
 <div>
@@ -25,5 +25,5 @@
 </div>
 
 <div>
-    <%= link_to "編集する" #編集画面へのパス %>
+    <%= link_to "編集する" ,edit_admin_item_path %>
 </div>
