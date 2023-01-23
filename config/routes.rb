@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
   
+  namespace :admin do
+    get 'genres/new'
+    get 'genres/edit'
+  end
   #管理者用のルーティング
   devise_for :admin, skip: [:registrations, :passwards], controllers: {
     sessions: "admin/sessions"
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
     resources :items, only: [:new, :show, :edit, :update, :create, :index]
     resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:index, :show]
+    resources :genres, only: [:index, :edit, :create, :update]
   end
   
   
