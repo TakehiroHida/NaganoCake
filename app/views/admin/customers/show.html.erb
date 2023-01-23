@@ -1,2 +1,40 @@
-<h1>Admin::Customers#show</h1>
-<p>Find me in app/views/admin/customers/show.html.erb</p>
+<h1><%= customer.last_name %> <%= customer.first_name %>さんの会員詳細</h1>
+
+<div>
+    <h3>会員ID</h3>
+</div>
+
+<div>
+    <h3>氏名</h3>
+</div>
+
+<div>
+    <h3>フリガナ</h3>
+</div>
+<div>
+    <h3>郵便番号</h3>
+</div>
+
+<div>
+    <h3>住所</h3>
+</div>
+
+<div>
+    <h3>電話番号</h3>
+</div>
+
+<div>
+    <h3>メールアドレス</h3>
+</div>
+
+<div>
+    <h3>会員ステータス</h3>
+</div>
+
+<div>
+    <%= link_to "編集する" ,edit_admin_customer_path %>
+</div>
+
+<div>
+    <%= link_to "注文履歴一覧を見る" , %>
+</div>

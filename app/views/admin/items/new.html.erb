@@ -1,6 +1,6 @@
 <h1>商品新規登録</h1>
 
-<%= form_with model: @item do |f| %>
+<%= form_with model: @item, url: admin_items_path do |f| %>
     <div>
         <h3>商品画像</h3>
             <%= f.file_field :image, accept: "image/*" %>
@@ -16,14 +16,14 @@
             <%= f.text_area :introduction %>
     </div>
    
-       <div>
+    <div>
         <h3>ジャンル</h3>
            <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name) %>
     </div>
     
     <div>
         <h3>税込み価格</h3>
-            <p><%= f.text_area :price %>円</p>
+            <p><%= f.text_field :price %>円</p>
     </div>
         
     <div>

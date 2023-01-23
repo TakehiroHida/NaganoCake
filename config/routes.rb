@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   
   namespace :admin do
     root 'orders#index' #後々注文履歴一覧のページに変更する
-    resources :items, except: [:destroy]
-    resources :customers, only: [:index, :show, :edit]
+    resources :items, only: [:new, :show, :edit, :update, :create, :index]
+    resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:index, :show]
   end
   
@@ -22,7 +22,9 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
   
-  resources :items
-  
+  scope module: :public do
+    resources :items
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
