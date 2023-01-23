@@ -12,7 +12,20 @@
 
 
   <body>
-      
+    <header>
+      <% if admin_signed_in? %>
+        <% if request.fullpath.include? "/admin" %>
+          <li>
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
+          </li>
+        <% end %>
+        
+      <% end %>
+    </header>
     
     <%= yield %>
   </body>
