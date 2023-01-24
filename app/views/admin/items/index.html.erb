@@ -10,8 +10,7 @@
         <% @items.each do |item| %>
             <td><%= item.id %></td>
             <td>
-                <% link_to admin_item_path do %>
-                    <%= item.name %>
+                <% link_to "#{item.name}", admin_item_path(item.id) do %>
                 <% end %>
             </td>
             <td><%= item.price %></td>
