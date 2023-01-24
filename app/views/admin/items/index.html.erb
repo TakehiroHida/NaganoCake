@@ -1,5 +1,9 @@
 <h1>商品一覧</h1>
 
+<div>
+    <%= link_to "新規投稿アイコン", new_admin_item_path %>
+</div>
+
 <table>
     <thead>
         <tr>
@@ -10,10 +14,9 @@
         <% @items.each do |item| %>
             <td><%= item.id %></td>
             <td>
-                <% link_to "#{item.name}", admin_item_path(item.id) do %>
-                <% end %>
+                <%= link_to "#{item.name}", admin_item_path(item.id) %>
             </td>
-            <td><%= item.price %></td>
+            <td><%= item.price.to_s(:delimited) %></td>
             <td><%= item.genre.name %></td>
             <td><% if item.is_active? %>
                     <span>販売中</span>
