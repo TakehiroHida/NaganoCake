@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   
   
-  namespace :admin do
-    get 'genres/new'
-    get 'genres/edit'
-  end
   #管理者用のルーティング
   devise_for :admin, skip: [:registrations, :passwards], controllers: {
     sessions: "admin/sessions"
@@ -12,11 +8,13 @@ Rails.application.routes.draw do
   
   
   namespace :admin do
-    root 'orders#index' #後々注文履歴一覧のページに変更する
+    root 'orders#index'
     resources :items, only: [:new, :show, :edit, :update, :create, :index]
     resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:index, :show]
     resources :genres, only: [:index, :edit, :create, :update]
+    get 'genres/new'
+    get 'genres/edit'
   end
   
   
